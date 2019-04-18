@@ -40,12 +40,13 @@
         return json;
     }
     var browser = BrowserInfo();
+    var  data ='';
     $(function (){
 
         if(browser.isIphone){
             console.log("iphone");
            var iPhoneUrl = location.href;
-           var data = iPhoneUrl.split("?");
+           data = iPhoneUrl.split("?");
            console.log("egoshe://to?"+data[1]);
            window.location.href="egoshe://to?"+data[1];
 
@@ -62,8 +63,10 @@
 
     $(".button").on('click',function () {
         if(browser.isIphone) {
-            window.location.href = "https://itunes.apple.com/cn/app/id1456738469?mt=8"
+            // window.location.href = "https://itunes.apple.com/cn/app/id1456738469?mt=8"
+            window.location.href="egoshe://to?"+data[1];
         }
+
         if(browser.isAndroid) {
             // window.location.href = "https://itunes.apple.com/cn/app/id1456738469?mt=8"
         }
